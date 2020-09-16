@@ -6,10 +6,10 @@ import android.widget.Toast;
 
 public class dataHelper {
 
-    public static final String SHARED_PREFS = "sharedPrefs";
-    public static final String PET_NAME = "petName";
-    public static final String PET_STATE = "petState";
-    public static final String PET_TYPE = "petType";
+    public static String SHARED_PREFS = "sharedPrefs";
+    public static String PET_NAME = "petName";
+    public static String PET_STATE = "petState";
+    public static String PET_TYPE = "petType";
 
     Context context;
 
@@ -59,6 +59,8 @@ public class dataHelper {
 
     public void loadData() {
         sharedPreferences = context.getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
-        _petName = sharedPreferences.getString(PET_NAME, "");
+        PET_NAME = sharedPreferences.getString(PET_NAME, "");
+        PET_STATE = sharedPreferences.getString(PET_STATE, "");
+        PET_TYPE= sharedPreferences.getString(PET_TYPE, "");
     }
 }
