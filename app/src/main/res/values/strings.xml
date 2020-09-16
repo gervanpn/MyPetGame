@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyPet</string>
+
+    <string name="pet_title">Your Pet\'s Status</string>
+    <string name="pet_name">Pet Name</string>
+    <string name="pet_state">Your pet is:</string>
+    <string name="pet_type">You have a:</string>
 </resources>
