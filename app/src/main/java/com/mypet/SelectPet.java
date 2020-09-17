@@ -24,7 +24,7 @@ ImageButton cat, dog, hamster;
             public void onClick(View v) {
                 IPet petTypeCat = petfactory.getType(AnimalType.Cat);
                 petTypeCat.message(getApplicationContext());
-                Intent intent = new Intent(SelectPet.this,PetData.class);
+                Intent intent = new Intent(getApplicationContext(),PetData.class);
                 startActivity(intent);
             }
         });
