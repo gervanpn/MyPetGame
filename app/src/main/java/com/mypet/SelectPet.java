@@ -28,7 +28,7 @@ ImageButton cat, dog, hamster;
             @Override
             public void onClick(View v) {
                 IPet petTypeCat = petfactory.getType(AnimalType.Cat);
-//                petTypeCat.createPet();
+                petTypeCat.message();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
                 Toast.makeText(SelectPet.this, "Congrats you got your cat", Toast.LENGTH_LONG).show();
@@ -39,7 +39,7 @@ ImageButton cat, dog, hamster;
             @Override
             public void onClick(View v) {
                 IPet petTypeDog = petfactory.getType(AnimalType.Dog);
-//                petTypeDog.createPet();
+                petTypeDog.message();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
                 Toast.makeText(SelectPet.this, "Congrats you got your dog", Toast.LENGTH_LONG).show();
@@ -50,7 +50,7 @@ ImageButton cat, dog, hamster;
             @Override
             public void onClick(View v) {
                 IPet petTypeHamster = petfactory.getType(AnimalType.Hamster);
-//                petTypeHamster.createPet();
+                petTypeHamster.message();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
                 Toast.makeText(SelectPet.this, "Congrats you got your Hamster", Toast.LENGTH_LONG).show();
