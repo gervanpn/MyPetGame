@@ -16,4 +16,8 @@
     <string name="cat">Cat</string>
     <string name="dog">Dog</string>
     <string name="hamster">Hamster</string>
+    <string name="feed">Feed</string>
+    <string name="play">PLAY</string>
+    <string name="sleep">Sleep</string>
+    <string name="petimage">PetImage</string>
 </resources>

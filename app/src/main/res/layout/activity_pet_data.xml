@@ -10,8 +10,8 @@
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/pet_title"
         android:textColor="#FF5722"
         android:textSize="24sp"
@@ -20,17 +20,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <TextView
+        android:id="@+id/txtNameTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="67dp"
+        android:text="@string/pet_name"
+        android:textAlignment="textEnd"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtNameData"
+        app:layout_constraintEnd_toStartOf="@+id/txtNameData"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtNameData" />
+
     <EditText
         android:id="@+id/txtNameData"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="26dp"
         android:autofillHints=""
         android:inputType="text"
         android:text="@string/pet_name"
         android:textColor="#4CAF50"
         android:textSize="18sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/txtStateData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtNameTitle"
@@ -40,73 +57,110 @@
         android:id="@+id/txtStateTitle"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="67dp"
         android:text="@string/pet_state"
         android:textAlignment="textEnd"
         android:textColor="#3F51B5"
         android:textSize="18sp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/txtStateData"
         app:layout_constraintEnd_toStartOf="@+id/txtStateData"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtStateData" />
 
-    <TextView
-        android:id="@+id/txtTypeTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/pet_type"
-        android:textAlignment="textEnd"
-        android:textColor="#3F51B5"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtTypeData"
-        app:layout_constraintEnd_toStartOf="@+id/txtTypeData"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtTypeData" />
 
     <EditText
         android:id="@+id/txtStateData"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="25dp"
         android:text="@string/pet_state"
-        android:textColor="#3F51B5"
+        android:textColor="#4CAF50"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/txtTypeData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtStateTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtNameData" />
 
+    <TextView
+        android:id="@+id/txtTypeTitle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="67dp"
+        android:text="@string/pet_type"
+        android:textAlignment="textEnd"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/txtTypeData"
+        app:layout_constraintEnd_toStartOf="@+id/txtTypeData"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtTypeData" />
+
     <EditText
         android:id="@+id/txtTypeData"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="633dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="39dp"
         android:text="@string/pet_state"
-        android:textColor="#3F51B5"
+        android:textColor="#4CAF50"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_feed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txtTypeTitle"
         app:layout_constraintTop_toBottomOf="@+id/txtStateData" />
 
-    <TextView
-        android:id="@+id/txtNameTitle"
+    <Button
+        android:id="@+id/btn_feed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/feed"
+        app:layout_constraintBottom_toTopOf="@+id/btn_play"
+        app:layout_constraintEnd_toStartOf="@+id/btn_play"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTypeData" />
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="27dp"
+        android:text="@string/play"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/btn_sleep"
+        app:layout_constraintStart_toEndOf="@+id/btn_feed"
+        app:layout_constraintTop_toBottomOf="@+id/btn_feed" />
+
+    <Button
+        android:id="@+id/btn_sleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sleep"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btn_play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_play" />
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/pet_name"
-        android:textAlignment="textEnd"
-        android:textColor="#3F51B5"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtNameData"
-        app:layout_constraintEnd_toStartOf="@+id/txtNameData"
+        android:layout_marginStart="44dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginBottom="141dp"
+        android:contentDescription="@string/petimage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtNameData" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_play"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
