@@ -1,5 +1,11 @@
 package com.mypet.PetFactory;
 
+import android.content.Context;
+
+import com.mypet.Enums.PetState;
+
 public interface IPet {
-    void message();
+    int play();
+    PetState feed();
+    void message(Context _context);
 }
