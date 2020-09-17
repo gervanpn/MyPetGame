@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">MyPet</string>
-    <string name="pet_title">Your Pet\'s Status</string>
-    <string name="pet_name">Pet Name</string>
-    <string name="pet_state">Your pet is:</string>
-    <string name="pet_type">You have a:</string>
-    <string name="title_activity_select_pet">SelectPet</string>
+    <string name = "app_name">MyPet</string>
+    <string name = "pet_title">Your Pet\'s Status</string>
+    <string name = "pet_name">Pet Name</string>
+    <string name = "pet_state">Your pet is:</string>
+    <string name = "pet_type">You have a:</string>
+    <string name = "title_activity_select_pet">SelectPet</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -20,5 +20,6 @@
     <string name="play">PLAY</string>
     <string name="sleep">Sleep</string>
     <string name="petimage">PetImage</string>
+    <string name="your_pet_name">Your Pet Name</string>
     <string name="save">Save</string>
 </resources>
