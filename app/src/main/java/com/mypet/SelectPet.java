@@ -32,9 +32,9 @@ String nameOfPet;
                 petTypeCat.message(getApplicationContext());
                 Intent intent = new Intent(getApplicationContext(),PetData.class);
                 nameOfPet = petName.getText().toString();
-                intent.putExtra("name", nameOfPet);
+                intent.putExtra("Name", nameOfPet);
                 intent.putExtra("Type", "Cat");
-                intent.putExtra("img", "cat_button");
+                intent.putExtra("Img", "cat_button");
                 startActivity(intent);
             }
         });
@@ -46,9 +46,9 @@ String nameOfPet;
                 petTypeDog.message(getApplicationContext());
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 nameOfPet = petName.getText().toString();
-                intent.putExtra("name", nameOfPet);
+                intent.putExtra("Name", nameOfPet);
                 intent.putExtra("Type", "Dog");
-                intent.putExtra("img", "dog_button");
+                intent.putExtra("Img", "dog_button");
                 startActivity(intent);
             }
         });
@@ -60,9 +60,9 @@ String nameOfPet;
                 petTypeHamster.message(getApplicationContext());
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 nameOfPet = petName.getText().toString();
-                intent.putExtra("name", nameOfPet);
+                intent.putExtra("Name", nameOfPet);
                 intent.putExtra("Type", "Hamster");
-                intent.putExtra("img", "hamster_btn");
+                intent.putExtra("Img", "hamster_btn");
                 startActivity(intent);
             }
         });

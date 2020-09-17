@@ -12,6 +12,7 @@ public class PetData extends AppCompatActivity {
     Button btnFeed, btnSleep, btnPlay;
     ImageView petPicture;
     EditText petNameData, petStateData, petTypeData;
+    String petName, petType, petImage;
 
 
     @Override
@@ -24,6 +25,13 @@ public class PetData extends AppCompatActivity {
         btnFeed = (Button) findViewById(R.id.btn_feed);
         btnSleep = (Button) findViewById(R.id.btn_sleep);
         btnPlay = (Button) findViewById(R.id.btn_play);
-        petPicture = (ImageView) findViewById(R.id.imageView)
+        petPicture = (ImageView) findViewById(R.id.imageView);
+
+      petName = getIntent().getExtras().getString("Name");
+      petNameData.setText(petName);
+      petType = getIntent().getExtras().getString("Type");
+      petTypeData.setText(petType);
+//      petImage = getIntent().getExtras().getString("Img");
+//      petPicture.setImageResource(R.drawable.petImage);
     }
 }
