@@ -9,7 +9,7 @@ import android.widget.ImageView;
 
 public class PetData extends AppCompatActivity {
 
-    Button btnFeed, btnSleep, btnPlay;
+    Button btnFeed, btnSleep, btnPlay, btnSave;
     ImageView petPicture;
     EditText petNameData, petStateData, petTypeData;
     String petName, petType, petImage;
@@ -25,6 +25,7 @@ public class PetData extends AppCompatActivity {
         btnFeed = (Button) findViewById(R.id.btn_feed);
         btnSleep = (Button) findViewById(R.id.btn_sleep);
         btnPlay = (Button) findViewById(R.id.btn_play);
+        btnSave = (Button) findViewById(R.id.btn_save);
         petPicture = (ImageView) findViewById(R.id.imageView);
 
       petName = getIntent().getExtras().getString("Name");
