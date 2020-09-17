@@ -1,9 +1,6 @@
 package com.mypet.FactoryPattern;
 
-import android.media.MediaPlayer;
-import android.provider.MediaStore;
 import android.util.Log;
-
 import com.mypet.Enums.PetState;
 import com.mypet.R;
 

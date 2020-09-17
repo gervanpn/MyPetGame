@@ -1,7 +1,6 @@
 package com.mypet.FactoryPattern;
 
 import android.util.Log;
-
 import com.mypet.Enums.PetState;
 import com.mypet.R;
 
