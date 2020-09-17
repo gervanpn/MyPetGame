@@ -10,7 +10,8 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.mypet.Enums.AnimalType;
-import com.mypet.FactoryPattern.IPetType;
+
+import com.mypet.FactoryPattern.IPet;
 import com.mypet.FactoryPattern.PetTypeFactory;
 
 public class SelectPet extends AppCompatActivity {
@@ -26,8 +27,8 @@ ImageButton cat, dog, hamster;
         cat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IPetType petTypeCat = petfactory.getType(AnimalType.Cat);
-                petTypeCat.createPet();
+                IPet petTypeCat = petfactory.getType(AnimalType.Cat);
+//                petTypeCat.createPet();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
                 Toast.makeText(SelectPet.this, "Congrats you got your cat", Toast.LENGTH_LONG).show();
@@ -37,8 +38,8 @@ ImageButton cat, dog, hamster;
         dog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IPetType petTypeDog = petfactory.getType(AnimalType.Dog);
-                petTypeDog.createPet();
+                IPet petTypeDog = petfactory.getType(AnimalType.Dog);
+//                petTypeDog.createPet();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
                 Toast.makeText(SelectPet.this, "Congrats you got your dog", Toast.LENGTH_LONG).show();
@@ -48,8 +49,8 @@ ImageButton cat, dog, hamster;
         hamster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IPetType petTypeHamster = petfactory.getType(AnimalType.Hamster);
-                petTypeHamster.createPet();
+                IPet petTypeHamster = petfactory.getType(AnimalType.Hamster);
+//                petTypeHamster.createPet();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
                 Toast.makeText(SelectPet.this, "Congrats you got your Hamster", Toast.LENGTH_LONG).show();
