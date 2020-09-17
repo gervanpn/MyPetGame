@@ -1,166 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PetData">
 
+
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
-        android:layout_marginBottom="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="23dp"
         android:text="@string/pet_title"
         android:textColor="#FF5722"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtNameData"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="24dp" />
 
     <TextView
         android:id="@+id/txtNameTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="44dp"
-        android:layout_marginEnd="67dp"
+        android:layout_marginTop="86dp"
         android:text="@string/pet_name"
         android:textAlignment="textEnd"
         android:textColor="#3F51B5"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtNameData"
         app:layout_constraintEnd_toStartOf="@+id/txtNameData"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtNameData" />
+        tools:layout_editor_absoluteY="95dp" />
 
     <EditText
         android:id="@+id/txtNameData"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="26dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="50dp"
         android:autofillHints=""
         android:inputType="text"
         android:text="@string/pet_name"
         android:textColor="#4CAF50"
         android:textSize="18sp"
         android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/txtStateData"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtNameTitle"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+        tools:layout_editor_absoluteY="79dp" />
 
     <TextView
         android:id="@+id/txtStateTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginEnd="67dp"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="237dp"
         android:text="@string/pet_state"
         android:textAlignment="textEnd"
         android:textColor="#3F51B5"
         android:textSize="18sp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/txtStateData"
         app:layout_constraintEnd_toStartOf="@+id/txtStateData"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtStateData" />
-
+        tools:layout_editor_absoluteY="180dp" />
 
     <EditText
         android:id="@+id/txtStateData"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="25dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="224dp"
+        android:layout_marginEnd="50dp"
         android:text="@string/pet_state"
         android:textColor="#4CAF50"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtTypeData"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtStateTitle"
-        app:layout_constraintTop_toBottomOf="@+id/txtNameData" />
+        tools:layout_editor_absoluteY="165dp" />
 
     <TextView
         android:id="@+id/txtTypeTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
         android:layout_marginStart="44dp"
-        android:layout_marginEnd="67dp"
+        android:layout_marginTop="162dp"
         android:text="@string/pet_type"
         android:textAlignment="textEnd"
         android:textColor="#3F51B5"
         android:textSize="18sp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/txtTypeData"
         app:layout_constraintEnd_toStartOf="@+id/txtTypeData"
+        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtTypeData" />
+        tools:layout_editor_absoluteY="268dp" />
 
     <EditText
         android:id="@+id/txtTypeData"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="39dp"
-        android:text="@string/pet_state"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="142dp"
+        android:layout_marginEnd="51dp"
+        android:text="@string/pet_type"
         android:textColor="#4CAF50"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_feed"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtTypeTitle"
-        app:layout_constraintTop_toBottomOf="@+id/txtStateData" />
+        tools:layout_editor_absoluteY="254dp" />
 
     <Button
         android:id="@+id/btn_feed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="20dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="342dp"
         android:text="@string/feed"
-        app:layout_constraintBottom_toTopOf="@+id/btn_play"
-        app:layout_constraintEnd_toStartOf="@+id/btn_play"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTypeData" />
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="370dp" />
 
     <Button
         android:id="@+id/btn_play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="27dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="341dp"
+        android:layout_marginEnd="41dp"
         android:text="@string/play"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/btn_sleep"
-        app:layout_constraintStart_toEndOf="@+id/btn_feed"
-        app:layout_constraintTop_toBottomOf="@+id/btn_feed" />
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="370dp" />
 
     <Button
         android:id="@+id/btn_sleep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="343dp"
         android:text="@string/sleep"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_play"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_play" />
+        tools:layout_editor_absoluteX="273dp"
+        tools:layout_editor_absoluteY="370dp" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginEnd="44dp"
-        android:layout_marginBottom="141dp"
+        android:layout_width="288dp"
+        android:layout_height="253dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="130dp"
         android:contentDescription="@string/petimage"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_play"
+        tools:layout_editor_absoluteY="468dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -8,7 +8,6 @@ import com.mypet.R;
 
 public class Dog implements IPet {
     private static final String TAG = "Dog";
-    Context _context;
 
     @Override
     public int play() {
@@ -22,7 +21,7 @@ public class Dog implements IPet {
         return PetState.Happy;
     }
     @Override
-        public void message() {
+        public void message(Context _context) {
             Message.message(_context,"Congrats you got your Dog");
     }
 }
