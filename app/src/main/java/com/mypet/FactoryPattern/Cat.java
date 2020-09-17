@@ -11,9 +11,6 @@ import static android.content.ContentValues.TAG;
 
 public class Cat implements IPet {
 
-    public Cat(String petName, String petType) {
-
-    }
     @Override
     public int play() {
         Log.d(TAG, "Meow");
