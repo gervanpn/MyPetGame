@@ -23,7 +23,7 @@ ImageButton cat, dog, hamster;
             @Override
             public void onClick(View v) {
                 IPet petTypeCat = petfactory.getType(AnimalType.Cat);
-                petTypeCat.message();
+                petTypeCat.message(getApplicationContext());
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
             }
@@ -33,7 +33,7 @@ ImageButton cat, dog, hamster;
             @Override
             public void onClick(View v) {
                 IPet petTypeDog = petfactory.getType(AnimalType.Dog);
-                petTypeDog.message();
+                petTypeDog.message(getApplicationContext());
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
             }
@@ -43,7 +43,7 @@ ImageButton cat, dog, hamster;
             @Override
             public void onClick(View v) {
                 IPet petTypeHamster = petfactory.getType(AnimalType.Hamster);
-                petTypeHamster.message();
+                petTypeHamster.message(getApplicationContext());
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
             }

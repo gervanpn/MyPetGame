@@ -24,7 +24,7 @@ public class Hamster implements IPet {
     }
 
     @Override
-    public void message() {
-        Message.message(_context,"Congrats you got your Dog");
+    public void message(Context context) {
+        Message.message(context,"Congrats you got your Hamster");
     }
 }

@@ -10,6 +10,7 @@ public class Cat implements IPet {
     private static final String TAG = "CAT";
     Context _context;
 
+   
     @Override
     public int play() {
         Log.d(TAG, "Meow");
@@ -23,7 +24,7 @@ public class Cat implements IPet {
     }
 
     @Override
-    public void message() {
-        Message.message(_context,"Congrats you got your cat");
+    public void message(Context context) {
+        Message.message(context,"Congrats you got your cat");
     }
 }
