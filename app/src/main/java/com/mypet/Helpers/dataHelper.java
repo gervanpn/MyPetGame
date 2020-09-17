@@ -1,4 +1,4 @@
-package com.mypet;
+package com.mypet.Helpers;
 
 import android.content.Context;
 import android.content.SharedPreferences;
