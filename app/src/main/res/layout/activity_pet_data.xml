@@ -157,20 +157,18 @@
         tools:layout_editor_absoluteY="370dp" />
 
     <Button
-        android:id="@+id/btn_sleep"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/imageView"
-        android:layout_below="@+id/txtTitle"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="285dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="35dp"
-        android:layout_toStartOf="@+id/btn_play"
-        android:layout_toEndOf="@+id/btn_feed"
-        android:text="@string/sleep"
-        tools:layout_editor_absoluteX="273dp"
-        tools:layout_editor_absoluteY="370dp" />
+        android:id = "@+id/btn_sleep"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:layout_below = "@+id/txtTitle"
+        android:layout_marginStart = "25dp"
+        android:layout_marginTop = "285dp"
+        android:layout_marginEnd = "24dp"
+        android:layout_toStartOf = "@+id/btn_play"
+        android:layout_toEndOf = "@+id/btn_feed"
+        android:text = "@string/sleep"
+        tools:layout_editor_absoluteX = "273dp"
+        tools:layout_editor_absoluteY = "370dp" />
 
     <ImageView
         android:id="@+id/imageView"
