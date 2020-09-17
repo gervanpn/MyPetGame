@@ -1,7 +1,7 @@
 package com.mypet.FactoryPattern;
 
 public class PetTypeFactory {
-    public IPetType getType(String Type){
+    public IPet getType(String Type){
         if(Type == null){
             return null;
         }
