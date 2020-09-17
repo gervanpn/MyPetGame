@@ -1,58 +1,69 @@
 package com.mypet;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.Toast;
-
 import com.mypet.Enums.AnimalType;
-import com.mypet.FactoryPattern.IPetType;
-import com.mypet.FactoryPattern.PetTypeFactory;
+import com.mypet.PetFactory.IPet;
+import com.mypet.PetFactory.PetTypeFactory;
 
 public class SelectPet extends AppCompatActivity {
 ImageButton cat, dog, hamster;
+EditText petName;
+String nameOfPet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_pet);
+
         cat = (ImageButton) findViewById(R.id.ImageButtonCat);
         dog = (ImageButton) findViewById(R.id.ImageButtonDog);
-       hamster = (ImageButton) findViewById(R.id.ImageButtonHamster);
+        hamster = (ImageButton) findViewById(R.id.ImageButtonHamster);
+        petName =(EditText) findViewById(R.id.petName);
+
         final PetTypeFactory petfactory = new PetTypeFactory();
         cat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IPetType petTypeCat = petfactory.getType(AnimalType.Cat);
-                petTypeCat.createPet();
-                Intent intent = new Intent(SelectPet.this,PetData.class);
+                IPet petTypeCat = petfactory.getType(AnimalType.Cat);
+                petTypeCat.message(getApplicationContext());
+                Intent intent = new Intent(getApplicationContext(),PetData.class);
+                nameOfPet = petName.getText().toString();
+                intent.putExtra("Name", nameOfPet);
+                intent.putExtra("Type", "Cat");
+                intent.putExtra("Img", "cat_button");
                 startActivity(intent);
-                Toast.makeText(SelectPet.this, "Congrats you got your cat", Toast.LENGTH_LONG).show();
             }
         });
 
         dog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IPetType petTypeDog = petfactory.getType(AnimalType.Dog);
-                petTypeDog.createPet();
+                IPet petTypeDog = petfactory.getType(AnimalType.Dog);
+                petTypeDog.message(getApplicationContext());
                 Intent intent = new Intent(SelectPet.this,PetData.class);
+                nameOfPet = petName.getText().toString();
+                intent.putExtra("Name", nameOfPet);
+                intent.putExtra("Type", "Dog");
+                intent.putExtra("Img", "dog_button");
                 startActivity(intent);
-                Toast.makeText(SelectPet.this, "Congrats you got your dog", Toast.LENGTH_LONG).show();
             }
         });
 
         hamster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IPetType petTypeHamster = petfactory.getType(AnimalType.Hamster);
-                petTypeHamster.createPet();
+                IPet petTypeHamster = petfactory.getType(AnimalType.Hamster);
+                petTypeHamster.message(getApplicationContext());
                 Intent intent = new Intent(SelectPet.this,PetData.class);
+                nameOfPet = petName.getText().toString();
+                intent.putExtra("Name", nameOfPet);
+                intent.putExtra("Type", "Hamster");
+                intent.putExtra("Img", "hamster_btn");
                 startActivity(intent);
-                Toast.makeText(SelectPet.this, "Congrats you got your Hamster", Toast.LENGTH_LONG).show();
             }
         });
     }

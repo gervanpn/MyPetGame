@@ -1,112 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PetData">
 
+
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="16dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="23dp"
         android:text="@string/pet_title"
         android:textColor="#FF5722"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtNameData"
-        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteX="105dp"
+        tools:layout_editor_absoluteY="24dp" />
+
+    <TextView
+        android:id="@+id/txtNameTitle"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="86dp"
+        android:text="@string/pet_name"
+        android:textAlignment="textEnd"
+        android:textColor="#3F51B5"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtNameData"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="95dp" />
 
     <EditText
         android:id="@+id/txtNameData"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="50dp"
+        android:layout_toEndOf="@+id/txtNameTitle"
         android:autofillHints=""
+        android:hint="@string/pet_name"
         android:inputType="text"
         android:text="@string/pet_name"
         android:textColor="#4CAF50"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtStateData"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtNameTitle"
-        app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+        tools:layout_editor_absoluteY="79dp" />
 
     <TextView
         android:id="@+id/txtStateTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/txtTypeTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="47dp"
+        android:layout_toStartOf="@+id/txtStateData"
         android:text="@string/pet_state"
         android:textAlignment="textEnd"
         android:textColor="#3F51B5"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtStateData"
+        android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/txtStateData"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtStateData" />
+        tools:layout_editor_absoluteY="180dp" />
+
+    <EditText
+        android:id="@+id/txtStateData"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/txtTypeData"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="50dp"
+        android:hint="@string/pet_state"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:text="@string/pet_state"
+        android:textColor="#4CAF50"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="165dp" />
 
     <TextView
         android:id="@+id/txtTypeTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_below="@+id/txtNameTitle"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="48dp"
+        android:layout_toStartOf="@+id/txtTypeData"
         android:text="@string/pet_type"
         android:textAlignment="textEnd"
         android:textColor="#3F51B5"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtTypeData"
+        android:visibility="visible"
         app:layout_constraintEnd_toStartOf="@+id/txtTypeData"
+        app:layout_constraintHorizontal_bias="0.021"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtTypeData" />
-
-    <EditText
-        android:id="@+id/txtStateData"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="13dp"
-        android:text="@string/pet_state"
-        android:textColor="#3F51B5"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtTypeData"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtStateTitle"
-        app:layout_constraintTop_toBottomOf="@+id/txtNameData" />
+        tools:layout_editor_absoluteY="268dp" />
 
     <EditText
         android:id="@+id/txtTypeData"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="633dp"
-        android:text="@string/pet_state"
-        android:textColor="#3F51B5"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/txtNameData"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="51dp"
+        android:hint="@string/pet_type"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:text="@string/pet_type"
+        android:textColor="#4CAF50"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/txtTypeTitle"
-        app:layout_constraintTop_toBottomOf="@+id/txtStateData" />
+        tools:layout_editor_absoluteY="254dp" />
 
-    <TextView
-        android:id="@+id/txtNameTitle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="71dp"
-        android:layout_marginEnd="8dp"
-        android:text="@string/pet_name"
-        android:textAlignment="textEnd"
-        android:textColor="#3F51B5"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/txtNameData"
-        app:layout_constraintEnd_toStartOf="@+id/txtNameData"
+    <Button
+        android:id="@+id/btn_feed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtStateTitle"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/feed"
+        tools:layout_editor_absoluteX="44dp"
+        tools:layout_editor_absoluteY="370dp" />
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtStateData"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="57dp"
+        android:layout_marginEnd="41dp"
+        android:text="@string/play"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="370dp" />
+
+    <Button
+        android:id="@+id/btn_sleep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView"
+        android:layout_below="@+id/txtTitle"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="285dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="35dp"
+        android:layout_toStartOf="@+id/btn_play"
+        android:layout_toEndOf="@+id/btn_feed"
+        android:text="@string/sleep"
+        tools:layout_editor_absoluteX="273dp"
+        tools:layout_editor_absoluteY="370dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="288dp"
+        android:layout_height="253dp"
+        android:layout_above="@+id/btn_save"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="41dp"
+        android:contentDescription="@string/petimage"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txtNameData" />
+        tools:layout_editor_absoluteY="468dp"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="41dp"
+        android:text="@string/save" />
+
+
+</RelativeLayout>
