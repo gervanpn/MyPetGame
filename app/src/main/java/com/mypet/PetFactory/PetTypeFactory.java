@@ -1,4 +1,4 @@
-package com.mypet.FactoryPattern;
+package com.mypet.PetFactory;
 
 import com.mypet.Enums.AnimalType;
 

@@ -1,12 +1,13 @@
-package com.mypet.FactoryPattern;
+package com.mypet.PetFactory;
 
 import android.util.Log;
 
 import static android.content.ContentValues.TAG;
 
-public class Hamster implements IPet {
+public class Dog implements IPet {
+
     @Override
     public void message() {
-        Log.d(TAG, "createPet:Hamster is created ");
+        Log.d(TAG, "createPet:Dog is created ");
     }
 }

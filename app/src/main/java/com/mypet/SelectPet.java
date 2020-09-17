@@ -5,14 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.mypet.Enums.AnimalType;
 
-import com.mypet.FactoryPattern.IPet;
-import com.mypet.FactoryPattern.PetTypeFactory;
+import com.mypet.PetFactory.IPet;
+import com.mypet.PetFactory.PetTypeFactory;
 
 public class SelectPet extends AppCompatActivity {
 ImageButton cat, dog, hamster;
