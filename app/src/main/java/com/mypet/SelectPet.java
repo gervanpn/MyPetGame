@@ -1,18 +1,13 @@
 package com.mypet;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
-
 import com.mypet.Enums.AnimalType;
-
-import com.mypet.FactoryPattern.IPet;
-import com.mypet.FactoryPattern.PetTypeFactory;
+import com.mypet.PetFactory.IPet;
+import com.mypet.PetFactory.PetTypeFactory;
 
 public class SelectPet extends AppCompatActivity {
 ImageButton cat, dog, hamster;
@@ -22,7 +17,7 @@ ImageButton cat, dog, hamster;
         setContentView(R.layout.activity_select_pet);
         cat = (ImageButton) findViewById(R.id.ImageButtonCat);
         dog = (ImageButton) findViewById(R.id.ImageButtonDog);
-       hamster = (ImageButton) findViewById(R.id.ImageButtonHamster);
+        hamster = (ImageButton) findViewById(R.id.ImageButtonHamster);
         final PetTypeFactory petfactory = new PetTypeFactory();
         cat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +26,6 @@ ImageButton cat, dog, hamster;
                 petTypeCat.message();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
-                Toast.makeText(SelectPet.this, "Congrats you got your cat", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -42,7 +36,6 @@ ImageButton cat, dog, hamster;
                 petTypeDog.message();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
-                Toast.makeText(SelectPet.this, "Congrats you got your dog", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -53,7 +46,6 @@ ImageButton cat, dog, hamster;
                 petTypeHamster.message();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
-                Toast.makeText(SelectPet.this, "Congrats you got your Hamster", Toast.LENGTH_LONG).show();
             }
         });
     }
