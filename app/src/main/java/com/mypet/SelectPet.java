@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.mypet.Enums.AnimalType;
 import com.mypet.FactoryPattern.IPetType;
 import com.mypet.FactoryPattern.PetTypeFactory;
 
@@ -25,7 +26,7 @@ ImageButton cat, dog, hamster;
         cat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IPetType petTypeCat = petfactory.getType("Cat");
+                IPetType petTypeCat = petfactory.getType(AnimalType.Cat);
                 petTypeCat.createPet();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
@@ -36,7 +37,7 @@ ImageButton cat, dog, hamster;
         dog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IPetType petTypeDog = petfactory.getType("Dog");
+                IPetType petTypeDog = petfactory.getType(AnimalType.Dog);
                 petTypeDog.createPet();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
@@ -47,7 +48,7 @@ ImageButton cat, dog, hamster;
         hamster.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IPetType petTypeHamster = petfactory.getType("Hamster");
+                IPetType petTypeHamster = petfactory.getType(AnimalType.Hamster);
                 petTypeHamster.createPet();
                 Intent intent = new Intent(SelectPet.this,PetData.class);
                 startActivity(intent);
