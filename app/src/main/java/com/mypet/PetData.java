@@ -25,9 +25,6 @@ public class PetData extends AppCompatActivity {
         btnFeed = (Button) findViewById(R.id.btn_feed);
         btnSleep = (Button) findViewById(R.id.btn_sleep);
         btnPlay = (Button) findViewById(R.id.btn_play);
-<<<<<<< HEAD
-        petPicture = (ImageView) findViewById(R.id.imageView);
-=======
         btnSave = (Button) findViewById(R.id.btn_save);
         petPicture = (ImageView) findViewById(R.id.imageView);
 
@@ -37,6 +34,6 @@ public class PetData extends AppCompatActivity {
       petTypeData.setText(petType);
 //      petImage = getIntent().getExtras().getString("Img");
 //      petPicture.setImageResource(R.drawable.petImage);
->>>>>>> 48e3322867b8851ade739f8cd3593989278b0bc6
+
     }
 }
