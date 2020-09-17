@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/1703329547/MyPet.iml" filepath="$PROJECT_DIR$/.idea/modules/1703329547/MyPet.iml" group="MyPet" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/46686098/MyPetGame-MyPet.iml" filepath="$PROJECT_DIR$/.idea/modules/46686098/MyPetGame-MyPet.iml" group="MyPet" />
       <module fileurl="file://$PROJECT_DIR$/.idea/app.iml" filepath="$PROJECT_DIR$/.idea/app.iml" group="MyPet/app" />
     </modules>
   </component>

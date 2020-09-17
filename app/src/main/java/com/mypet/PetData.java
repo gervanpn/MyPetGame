@@ -24,6 +24,6 @@ public class PetData extends AppCompatActivity {
         btnFeed = (Button) findViewById(R.id.btn_feed);
         btnSleep = (Button) findViewById(R.id.btn_sleep);
         btnPlay = (Button) findViewById(R.id.btn_play);
-        petPicture = (ImageView) findViewById(R.id.imageView)
+        petPicture = (ImageView) findViewById(R.id.imageView);
     }
 }
