@@ -14,10 +14,10 @@ public enum AnimalType {
 			return "Dog";
 		}
 	},
-	Hampster {
+	Hamster {
 		@Override
 		public String toString(){
-			return "Hampster";
+			return "Hamster";
 		}
 	};
 	
