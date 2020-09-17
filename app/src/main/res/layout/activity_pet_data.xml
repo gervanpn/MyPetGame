@@ -176,14 +176,25 @@
         android:id="@+id/imageView"
         android:layout_width="288dp"
         android:layout_height="253dp"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/btn_save"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="41dp"
         android:contentDescription="@string/petimage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="468dp"
         tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginBottom="41dp"
+        android:text="@string/save" />
 
 
 </RelativeLayout>
