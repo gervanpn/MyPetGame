@@ -1,8 +1,12 @@
 package com.mypet.FactoryPattern;
 
-public class Cat implements IPet {
+import android.util.Log;
+
+import static android.content.ContentValues.TAG;
+
+public class Cat implements IPetType {
     @Override
     public void createPet() {
-
+        Log.d(TAG, "createPet:Cat is created ");
     }
 }
