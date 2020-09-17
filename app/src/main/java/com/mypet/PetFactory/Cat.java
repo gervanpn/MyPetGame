@@ -1,13 +1,12 @@
 package com.mypet.PetFactory;
 
-import android.util.Log;
-
-import static android.content.ContentValues.TAG;
+import android.content.Context;
+import com.mypet.Helpers.Message;
 
 public class Cat implements IPet {
-
+    Context _context;
     @Override
     public void message() {
-        Log.d(TAG, "createPet:Cat is created ");
+        Message.message(_context,"Congrats you got your cat");
     }
 }
