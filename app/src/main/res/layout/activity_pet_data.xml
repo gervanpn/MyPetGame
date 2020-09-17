@@ -162,7 +162,7 @@
         android:layout_height="253dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="36dp"
+        android:layout_marginBottom="130dp"
         android:contentDescription="@string/petimage"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
