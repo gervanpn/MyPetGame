@@ -14,6 +14,7 @@ public class SelectPet extends AppCompatActivity {
 ImageButton cat, dog, hamster;
 EditText petName;
 String nameOfPet;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,7 @@ String nameOfPet;
             @Override
             public void onClick(View v) {
                 IPet petTypeCat = petfactory.getType(AnimalType.Cat);
+                int sound = petTypeCat.play();
                 petTypeCat.message(getApplicationContext());
                 Intent intent = new Intent(getApplicationContext(),PetData.class);
                 nameOfPet = petName.getText().toString();

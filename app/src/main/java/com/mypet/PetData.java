@@ -32,7 +32,8 @@ public class PetData extends AppCompatActivity {
       petNameData.setText(petName);
       petType = getIntent().getExtras().getString("Type");
       petTypeData.setText(petType);
-//      petImage = getIntent().getExtras().getString("Img");
-//      petPicture.setImageResource(R.drawable.petImage);
+      petImage = getIntent().getExtras().getString("Img");
+      int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
+      petPicture.setImageResource(resID);
     }
 }
