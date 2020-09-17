@@ -14,3 +14,5 @@
 .externalNativeBuild
 .cxx
 /.idea/
+/.idea/
+/app/.idea/
