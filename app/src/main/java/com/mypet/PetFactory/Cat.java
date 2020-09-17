@@ -9,6 +9,7 @@ import com.mypet.R;
 public class Cat implements IPet {
     private static final String TAG = "CAT";
 
+
     @Override
     public int play() {
         Log.d(TAG, "Meow");
@@ -23,6 +24,6 @@ public class Cat implements IPet {
 
     @Override
     public void message(Context _context) {
-        Message.message(_context,"Congrats you got your cat");
+        Message.message(_context,"Congrats you got your Cat");
     }
 }
