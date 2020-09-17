@@ -1,13 +1,14 @@
-package com.mypet.FactoryPattern;
+package com.mypet.PetFactory;
 
+import android.content.Context;
 import android.util.Log;
 import com.mypet.Enums.PetState;
-import com.mypet.PetFactory.IPet;
+import com.mypet.Helpers.Message;
 import com.mypet.R;
 
-import static android.content.ContentValues.TAG;
-
 public class Cat implements IPet {
+    private static final String TAG = "CAT";
+    Context _context;
 
     @Override
     public int play() {
@@ -23,6 +24,6 @@ public class Cat implements IPet {
 
     @Override
     public void message() {
-        Log.d(TAG, "createPet:Cat is created ");
+        Message.message(_context,"Congrats you got your cat");
     }
 }
