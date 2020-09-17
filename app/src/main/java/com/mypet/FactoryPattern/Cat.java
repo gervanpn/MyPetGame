@@ -1,6 +1,11 @@
 package com.mypet.FactoryPattern;
 
+import android.media.MediaPlayer;
+import android.provider.MediaStore;
 import android.util.Log;
+
+import com.mypet.Enums.PetState;
+import com.mypet.R;
 
 import static android.content.ContentValues.TAG;
 
@@ -10,12 +15,15 @@ public class Cat implements IPet {
 
     }
     @Override
-    public void play() {
-
+    public int play() {
+        Log.d(TAG, "Meow");
+        return R.raw.kitten_meow;
     }
 
-    public void saveInPref() {
-
+    @Override
+    public PetState feed() {
+        Log.d(TAG, "Cat eats mouse!");
+        return PetState.Happy;
     }
 
     @Override
