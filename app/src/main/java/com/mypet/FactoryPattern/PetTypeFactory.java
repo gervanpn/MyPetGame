@@ -7,7 +7,7 @@ public class PetTypeFactory {
     public IPet getType(AnimalType animalType){
         switch (animalType) {
             case Cat:
-                return new Cat();
+                return new Cat("Fluffy", "Cat");
             case Dog:
                 return new Dog();
             case Hamster:
