@@ -1,5 +1,5 @@
 package com.mypet.FactoryPattern;
 
-interface IPet {
-    void createPet();
+public interface IPet {
+//    void createPet();
 }

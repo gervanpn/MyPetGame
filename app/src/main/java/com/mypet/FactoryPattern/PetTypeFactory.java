@@ -4,7 +4,7 @@ import com.mypet.Enums.AnimalType;
 
 public class PetTypeFactory {
     //public IPetType getType(String Type){
-    public IPetType getType(AnimalType animalType){
+    public IPet getType(AnimalType animalType){
         switch (animalType) {
             case Cat:
                 return new Cat();
