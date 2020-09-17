@@ -2,6 +2,7 @@ package com.mypet.FactoryPattern;
 
 import android.util.Log;
 import com.mypet.Enums.PetState;
+import com.mypet.PetFactory.IPet;
 import com.mypet.R;
 
 import static android.content.ContentValues.TAG;
