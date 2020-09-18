@@ -21,7 +21,7 @@ public class Dog implements IPet {
         return PetState.Happy;
     }
     @Override
-        public void message(Context _context) {
-            Message.message(_context,"Congrats you got your Dog");
+        public void message(Context context) {
+            Message.message(context,"Congrats you got your Dog");
     }
 }
