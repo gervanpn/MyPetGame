@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import java.util.ArrayList;
+
 public class CustomListAdapter extends ArrayAdapter {
 	
 	//to reference the Activity
@@ -20,10 +22,11 @@ public class CustomListAdapter extends ArrayAdapter {
 	private final Integer[] imageIDarray;
 	
 	//to store the list of countries
-	private final String[] nameArray;
+	//private final String[] nameArray;
+	private ArrayList<String> nameArray = new ArrayList<String>();
 	
 	
-	public CustomListAdapter(Activity context, String[] nameArrayParam, Integer[] imageIDArrayParam){
+	public CustomListAdapter(Activity context, ArrayList<String> nameArrayParam, Integer[] imageIDArrayParam){
 		
 		super(context,R.layout.listview_row , nameArrayParam);
 		this.context=context;
@@ -40,7 +43,7 @@ public class CustomListAdapter extends ArrayAdapter {
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.imageViewIcon);
 		
 		//this code sets the values of the objects to values from the arrays
-		nameTextField.setText(nameArray[position]);
+		nameTextField.setText( nameArray.get( position ) );
 		imageView.setImageResource(imageIDarray[position]);
 		
 		return rowView;

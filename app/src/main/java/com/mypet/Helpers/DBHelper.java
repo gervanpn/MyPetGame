@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class DBHelper extends SQLiteOpenHelper {
     public final static String DATABASE_NAME = "Animal.db";
     public final static int VERSION = 1;
@@ -15,6 +17,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public final static String COL_3 = "Type";
     public final static String COL_4 = "State";
 
+    public ArrayList<String> petNames = new ArrayList<String>();
 
 
     public DBHelper( Context context) {

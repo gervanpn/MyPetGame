@@ -3,16 +3,22 @@ package com.mypet;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.mypet.Helpers.DBHelper;
+
+import java.util.ArrayList;
+
 public class PetListActivity extends AppCompatActivity {
 
 	Button addPet;
 	
-	String[] nameArray = {"Cat","Dog","Hamster" };
+	//String[] nameArray;// = {"Cat","Dog","Hamster" };
+	ArrayList<String> nameArray = new ArrayList<String>();
 	
 	Integer[] imageArray = {R.drawable.cat_button,
 				R.drawable.dog_button,
@@ -25,11 +31,37 @@ public class PetListActivity extends AppCompatActivity {
 		super.onCreate( savedInstanceState );
 		setContentView( R.layout.activity_pet_list );
 		
-		CustomListAdapter whatever = new CustomListAdapter(this, nameArray, imageArray);
+		CustomListAdapter whatever = new CustomListAdapter(this,nameArray , imageArray);
 		listView = findViewById(R.id.petListView);
 		addPet = findViewById(R.id.btn_addPet);
 		listView.setAdapter(whatever);
-
+		
+		DBHelper myDb = new DBHelper( this );
+		
+		Cursor data = myDb.getAllData();
+		//for (int row = 0; row < data.getCount(); row++) {
+			//for ( int index = 0 ; index < data.getColumnCount() ; index++ ) {
+		data.moveToFirst();
+		
+		do {
+		for(int i = 0; i < data.getColumnNames().length; i++) {
+			
+			String tmp = data.getString( i );
+			if ( data.getColumnName(i ).equals( "ID" ) ) {
+			} else {
+				if (data.getColumnName(i).equals( "NAME" )) nameArray.add( tmp );
+				//System.out.println( "Column Name -> " + data.getColumnName( i ) + " -> " + tmp );
+			}
+		}
+		//data.moveToNext();
+		//if (data.isLast()) break;
+		} while (!data.moveToNext());
+		data.close();
+				//data.moveToNext();
+			//}
+		//}
+		//System.out.println("Data -> " + data.toString());
+		
 		addPet.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
