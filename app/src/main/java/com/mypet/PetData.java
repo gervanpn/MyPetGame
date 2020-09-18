@@ -27,9 +27,9 @@ public class PetData extends AppCompatActivity {
     EditText petNameData, petStateData, petTypeData;
     String petName, petType, petImage;
     
-//    MediaPlayer dog_happy_sound = new MediaPlayer();;
-//    MediaPlayer cat_happy_sound = new MediaPlayer();;
-//    MediaPlayer hamster_happy_sound = new MediaPlayer();
+    MediaPlayer dog_happy_sound = new MediaPlayer();;
+    MediaPlayer cat_happy_sound = new MediaPlayer();;
+    MediaPlayer hamster_happy_sound = new MediaPlayer();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,14 +54,14 @@ public class PetData extends AppCompatActivity {
         int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
         petPicture.setImageResource(resID);
         
-//        dog_happy_sound.create(PetData.this, R.raw.dog_barking);
-//        cat_happy_sound.create(PetData.this, R.raw.kitten_meow);
+        dog_happy_sound.create(getApplicationContext(), R.raw.dog_barking);
+        cat_happy_sound.create(getApplicationContext(), R.raw.kitten_meow);
 //        try {
 //            cat_happy_sound.prepare();
 //        } catch ( IOException e ) {
 //            e.printStackTrace();
 //        }
-//        hamster_happy_sound.create(PetData.this, R.raw.hamster_squeak);
+        hamster_happy_sound.create(getApplicationContext(), R.raw.hamster_squeak);
 
         ibtnList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,9 +88,9 @@ public class PetData extends AppCompatActivity {
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (petType.equalsIgnoreCase( AnimalType.Cat.toString() )) {
-//                    cat_happy_sound.start();
-//                }
+                //if (petType.equalsIgnoreCase( AnimalType.Cat.toString() )) {
+                    cat_happy_sound.start();
+                //}
                 }
         });
 
