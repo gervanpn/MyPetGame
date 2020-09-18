@@ -11,9 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import com.mypet.Enums.AnimalType;
 import com.mypet.Enums.PetState;
 import com.mypet.Helpers.DBHelper;
 import com.mypet.Helpers.Message;
+
+import java.io.IOException;
 
 public class PetData extends AppCompatActivity {
     DBHelper myDb;
@@ -42,9 +46,20 @@ public class PetData extends AppCompatActivity {
         petNameData.setText(petName);
         petType = getIntent().getExtras().getString("Type");
         petTypeData.setText(petType);
-        petImage = getIntent().getExtras().getString("Img");
-        int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
-        petPicture.setImageResource(resID);
+         //int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
+        int resID = 0;
+        switch (petType){
+            case "Cat":
+                resID = R.drawable.cat_button;
+                break;
+            case "Dog":
+                resID = R.drawable.dog_button;
+                break;
+            case "Hamster":
+                resID = R.drawable.hamster_button;
+                break;
+        }
+        if (resID != 0) petPicture.setImageResource(resID);
 
         ibtnList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +68,7 @@ public class PetData extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
         btnFeed.setOnClickListener(new View.OnClickListener() {
             @Override

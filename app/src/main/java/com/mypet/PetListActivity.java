@@ -6,9 +6,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.mypet.Enums.AnimalType;
 import com.mypet.Helpers.DBHelper;
 
 import java.util.ArrayList;
@@ -19,7 +22,7 @@ public class PetListActivity extends AppCompatActivity {
 	
 	ArrayList<String> nameArray = new ArrayList<String>();
 	ArrayList<Integer> imagesArray = new ArrayList<Integer>();
-	ArrayList<Integer> imageArray = new ArrayList<Integer>();
+	ArrayList<String> animalArray = new ArrayList<String>();
 	
 	ListView listView;
 	@Override
@@ -47,12 +50,15 @@ public class PetListActivity extends AppCompatActivity {
 							switch (tmp){
 								case "Cat":
 									imagesArray.add(R.drawable.cat_button);
+									animalArray.add( AnimalType.Cat.toString());
 									break;
 								case "Dog":
 									imagesArray.add(R.drawable.dog_button);
+									animalArray.add( AnimalType.Dog.toString());
 									break;
 								case "Hamster":
 									imagesArray.add(R.drawable.hamster_button );
+									animalArray.add( AnimalType.Hamster.toString());
 									break;
 							}
 						}
@@ -66,6 +72,16 @@ public class PetListActivity extends AppCompatActivity {
 		CustomListAdapter whatever = new CustomListAdapter(this,nameArray , imagesArray);
 		listView.setAdapter(whatever);
 		
+		listView.setOnItemClickListener(new OnItemClickListener() {
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position,
+									long id) {
+				Intent intent = new Intent(PetListActivity.this, PetData.class);
+				intent.putExtra( "Name", nameArray.get(position) );
+				intent.putExtra( "Type", animalArray.get(position) );
+				startActivity(intent);
+			}
+		});
 		addPet.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
