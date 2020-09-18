@@ -1,10 +1,13 @@
 package com.mypet;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 import com.mypet.Helpers.DBHelper;
@@ -12,6 +15,7 @@ import com.mypet.Helpers.DBHelper;
 public class PetData extends AppCompatActivity {
     DBHelper myDb;
     Button btnFeed, btnSleep, btnPlay, btnSave;
+    ImageButton ibtnList;
     ImageView petPicture;
     EditText petNameData, petStateData, petTypeData;
     String petName, petType, petImage;
@@ -27,9 +31,9 @@ public class PetData extends AppCompatActivity {
         btnFeed = (Button) findViewById(R.id.btn_feed);
         btnSleep = (Button) findViewById(R.id.btn_sleep);
         btnPlay = (Button) findViewById(R.id.btn_play);
-        petPicture = (ImageView) findViewById(R.id.imageView);
         btnSave = (Button) findViewById(R.id.btn_save);
         petPicture = (ImageView) findViewById(R.id.imageView);
+        ibtnList = findViewById(R.id.ibtn_listview);
 
         petName = getIntent().getExtras().getString("Name");
         petNameData.setText(petName);
@@ -38,9 +42,17 @@ public class PetData extends AppCompatActivity {
         petImage = getIntent().getExtras().getString("Img");
         int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
         petPicture.setImageResource(resID);
+
+        ibtnList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PetData.this, PetListActivity.class);
+                startActivity(intent);
+            }
+        });
+
         myDb = new DBHelper(this);
         AddData();
-
     }
 
     public void AddData() {
@@ -55,5 +67,6 @@ public class PetData extends AppCompatActivity {
                     Toast.makeText(PetData.this, "data did not get inserted", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }
