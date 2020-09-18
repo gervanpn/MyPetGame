@@ -1,7 +1,6 @@
 package com.mypet;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -10,20 +9,17 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
-
 import com.mypet.Enums.AnimalType;
 import com.mypet.Helpers.DBHelper;
-
 import java.util.ArrayList;
 
 public class PetListActivity extends AppCompatActivity {
 	Button addPet;
-	
+	ListView listView;
 	ArrayList<String> nameArray = new ArrayList<String>();
 	ArrayList<Integer> imagesArray = new ArrayList<Integer>();
 	ArrayList<String> animalArray = new ArrayList<String>();
-	
-	ListView listView;
+
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
@@ -40,7 +36,6 @@ public class PetListActivity extends AppCompatActivity {
 		if (data.getCount() > 0 ) {
 			for (int rows = 0; rows < data.getCount(); rows++) {
 				for ( int i = 0 ; i < data.getColumnNames().length ; i++ ) {
-				
 					String tmp = data.getString( i );
 					if ( data.getColumnName( i ).equals( "ID" ) ) {
 					} else {
@@ -89,5 +84,4 @@ public class PetListActivity extends AppCompatActivity {
 			}
 		});
 	}
-
 }

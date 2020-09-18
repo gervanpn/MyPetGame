@@ -1,7 +1,6 @@
 package com.mypet;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.media.MediaPlayer;
@@ -11,8 +10,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-
-import com.mypet.Enums.AnimalType;
 import com.mypet.Enums.PetState;
 import com.mypet.Helpers.DBHelper;
 import com.mypet.Helpers.Message;
@@ -21,7 +18,6 @@ import com.mypet.PetFactory.Dog;
 import com.mypet.PetFactory.Hamster;
 import com.mypet.PetFactory.IPet;
 
-import java.io.IOException;
 
 public class PetData extends AppCompatActivity {
     DBHelper myDb;
@@ -51,7 +47,6 @@ public class PetData extends AppCompatActivity {
         petNameData.setText(petName);
         petType = getIntent().getExtras().getString("Type");
         petTypeData.setText(petType);
-         //int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
         int resID = 0;
         
         switch (petType){

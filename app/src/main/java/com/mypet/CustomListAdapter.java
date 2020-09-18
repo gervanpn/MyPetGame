@@ -1,18 +1,12 @@
 package com.mypet;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import androidx.annotation.NonNull;
-
-import com.mypet.Enums.AnimalType;
-
 import java.util.ArrayList;
 
 public class CustomListAdapter extends ArrayAdapter {
@@ -23,11 +17,10 @@ public class CustomListAdapter extends ArrayAdapter {
 	//to store the animal images
 	private ArrayList<Integer> imagesIDarray = new ArrayList<Integer>();
 	
-	//to store the list of countries
+	//to store the list of animals
 	private ArrayList<String> nameArray = new ArrayList<String>();
 	
 	public CustomListAdapter(Activity context, ArrayList<String> nameArrayParam, ArrayList<Integer> imagesIDArrayParam){
-		
 		super(context,R.layout.listview_row , nameArrayParam);
 		this.context=context;
 		this.imagesIDarray = imagesIDArrayParam;

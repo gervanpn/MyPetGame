@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".PetData">
 
-
     <TextView
         android:id="@+id/txtTitle"
         android:layout_width="wrap_content"
@@ -149,9 +148,6 @@
         tools:layout_editor_absoluteX="44dp"
         tools:layout_editor_absoluteY="370dp" />
 
-    <!--        tools:srcCompat="@tools:sample/backgrounds/scenic" -->
-
-
     <Button
         android:id="@+id/btn_play"
         android:layout_width="wrap_content"
@@ -221,6 +217,5 @@
         android:layout_marginBottom="39dp"
         android:contentDescription="@string/select_pet"
         app:srcCompat="@drawable/ic_baseline_list_alt_24" />
-
 
 </RelativeLayout>
