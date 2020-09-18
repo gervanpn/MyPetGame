@@ -83,15 +83,11 @@ public class PetData extends AppCompatActivity {
             }
         });
 
-
         btnFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (petType.equalsIgnoreCase("Cat") ) {
                     petImage = "hungry_cat";
-                    //pet.setState(pet.getState().nextState());
-                    //if (pet.getState() == PetState.Happy) pet.setState( PetState.Happy.nextState() );
-                    
                     int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
                     petPicture.setImageResource(resID);
                 } else if (petType.equalsIgnoreCase("Dog")) {
@@ -135,9 +131,7 @@ public class PetData extends AppCompatActivity {
     
                 if (pet.getState() == PetState.Hungry) {
                     pet.setState( PetState.Hungry.nextState() );
-                } //else if (pet.getState() == PetState.Energetic) {
-                    //pet.setState( PetState.Energetic.nextState() );
-                //}
+                }
                 petStateData.setText(pet.getState().toString());
             }
         });
