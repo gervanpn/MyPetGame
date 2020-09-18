@@ -35,7 +35,6 @@ String nameOfPet;
                 nameOfPet = petName.getText().toString();
                 intent.putExtra("Name", nameOfPet);
                 intent.putExtra("Type", AnimalType.Cat.toString());
-                intent.putExtra("Img", AnimalType.Cat.returnImage());
                 startActivity(intent);
             }
         });
@@ -49,7 +48,6 @@ String nameOfPet;
                 nameOfPet = petName.getText().toString();
                 intent.putExtra("Name", nameOfPet);
                 intent.putExtra("Type", AnimalType.Dog.toString());
-                intent.putExtra("Img", AnimalType.Dog.returnImage());
                 startActivity(intent);
             }
         });
@@ -63,7 +61,6 @@ String nameOfPet;
                 nameOfPet = petName.getText().toString();
                 intent.putExtra("Name", nameOfPet);
                 intent.putExtra("Type", AnimalType.Hamster.toString());
-                intent.putExtra("Img", AnimalType.Hamster.returnImage());
                 startActivity(intent);
             }
         });

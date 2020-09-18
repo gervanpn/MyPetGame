@@ -16,6 +16,10 @@ import com.mypet.Enums.AnimalType;
 import com.mypet.Enums.PetState;
 import com.mypet.Helpers.DBHelper;
 import com.mypet.Helpers.Message;
+import com.mypet.PetFactory.Cat;
+import com.mypet.PetFactory.Dog;
+import com.mypet.PetFactory.Hamster;
+import com.mypet.PetFactory.IPet;
 
 import java.io.IOException;
 
@@ -26,6 +30,7 @@ public class PetData extends AppCompatActivity {
     ImageView petPicture;
     EditText petNameData, petStateData, petTypeData;
     String petName, petType, petImage;
+    IPet pet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,19 +53,28 @@ public class PetData extends AppCompatActivity {
         petTypeData.setText(petType);
          //int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
         int resID = 0;
+        
         switch (petType){
             case "Cat":
                 resID = R.drawable.cat_button;
+                pet = new Cat();
+                pet.setState(PetState.Happy);
                 break;
             case "Dog":
                 resID = R.drawable.dog_button;
+                pet = new Dog();
+                pet.setState(PetState.Happy);
                 break;
             case "Hamster":
                 resID = R.drawable.hamster_button;
+                pet = new Hamster();
+                pet.setState(PetState.Happy);
                 break;
         }
         if (resID != 0) petPicture.setImageResource(resID);
 
+        petStateData.setText(pet.getState().toString());
+        
         ibtnList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,7 +82,6 @@ public class PetData extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
         btnFeed.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,13 +92,23 @@ public class PetData extends AppCompatActivity {
                     petPicture.setImageResource(resID);
                 } else if (petType.equalsIgnoreCase("Dog")) {
                     petImage = "hungry_dog";
+                    pet.setState(pet.getState().nextState());
+                    petStateData.setText(pet.getState().toString());
                     int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
                     petPicture.setImageResource(resID);
                 } else {
                     petImage = "hungry_hamster";
+                    pet.setState(pet.getState().nextState());
+                    petStateData.setText(pet.getState().toString());
                     int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
                     petPicture.setImageResource(resID);
                 }
+                if (pet.getState() == PetState.Hungry) {
+                    pet.setState( PetState.Happy );
+                } else if (pet.getState() == PetState.Happy) {
+                    pet.setState( PetState.Happy.nextState() );
+                }
+                petStateData.setText(pet.getState().toString());
             }
         });
 
@@ -105,6 +128,11 @@ public class PetData extends AppCompatActivity {
                     int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
                     petPicture.setImageResource(resID);
                 }
+    
+                if (pet.getState() == PetState.Hungry) {
+                    pet.setState( PetState.Hungry.nextState() );
+                }
+                petStateData.setText(pet.getState().toString());
             }
         });
 
@@ -133,6 +161,12 @@ public class PetData extends AppCompatActivity {
                     mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.hamster_squeak);
                     mediaPlayer.start();
                 }
+                if (pet.getState() == PetState.Energetic) {
+                    pet.setState( PetState.Happy );
+                }else if (pet.getState() == PetState.Happy) {
+                    pet.setState( PetState.Hungry );
+                }
+                petStateData.setText(pet.getState().toString());
             }
         });
 
