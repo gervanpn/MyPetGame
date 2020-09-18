@@ -87,7 +87,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="50dp"
-        android:hint="@string/pet_state"
+        android:hint="Happy"
         android:importantForAutofill="no"
         android:inputType="text"
         android:text="@string/pet_state"
@@ -141,6 +141,7 @@
         android:layout_marginStart="39dp"
         android:layout_marginTop="80dp"
         android:text="@string/feed"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="44dp"
         tools:layout_editor_absoluteY="370dp" />
 
@@ -153,6 +154,7 @@
         android:layout_marginTop="57dp"
         android:layout_marginEnd="41dp"
         android:text="@string/play"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="370dp" />
 
@@ -160,15 +162,15 @@
         android:id="@+id/btn_sleep"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/imageView"
         android:layout_below="@+id/txtTitle"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="285dp"
+        android:layout_marginTop="287dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="35dp"
         android:layout_toStartOf="@+id/btn_play"
         android:layout_toEndOf="@+id/btn_feed"
         android:text="@string/sleep"
+        android:visibility="visible"
         tools:layout_editor_absoluteX="273dp"
         tools:layout_editor_absoluteY="370dp" />
 
