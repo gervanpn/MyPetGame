@@ -7,5 +7,5 @@ import com.mypet.Enums.PetState;
 public interface IPet {
     int play();
     PetState feed();
-    void message(Context _context);
+    void message(Context context);
 }
