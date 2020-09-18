@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.mypet.Enums.AnimalType;
 import com.mypet.Helpers.DBHelper;
 
 import java.util.ArrayList;
@@ -20,18 +21,30 @@ public class PetListActivity extends AppCompatActivity {
 	//String[] nameArray;// = {"Cat","Dog","Hamster" };
 	ArrayList<String> nameArray = new ArrayList<String>();
 	
+	//ArrayList<Integer> imageArray = new ArrayList<Integer>();
+	
+	//ArrayList< AnimalType> animalTypes = new ArrayList<AnimalType>();
+	
 	Integer[] imageArray = {R.drawable.cat_button,
 				R.drawable.dog_button,
 				R.drawable.hamster_btn,
+
+			R.drawable.cat_button,
+				R.drawable.dog_button,
+				R.drawable.hamster_btn,
+
+			R.drawable.cat_button,
+				R.drawable.dog_button,
+				R.drawable.hamster_btn,
 				};
-	
+
 	ListView listView;
 	@Override
 	protected void onCreate (Bundle savedInstanceState) {
 		super.onCreate( savedInstanceState );
 		setContentView( R.layout.activity_pet_list );
 		
-		CustomListAdapter whatever = new CustomListAdapter(this,nameArray , imageArray);
+		CustomListAdapter whatever = new CustomListAdapter(this,nameArray , imageArray);//, animalTypes);
 		listView = findViewById(R.id.petListView);
 		addPet = findViewById(R.id.btn_addPet);
 		listView.setAdapter(whatever);
@@ -43,20 +56,27 @@ public class PetListActivity extends AppCompatActivity {
 			//for ( int index = 0 ; index < data.getColumnCount() ; index++ ) {
 		data.moveToFirst();
 		
-		do {
-		for(int i = 0; i < data.getColumnNames().length; i++) {
-			
-			String tmp = data.getString( i );
-			if ( data.getColumnName(i ).equals( "ID" ) ) {
-			} else {
-				if (data.getColumnName(i).equals( "NAME" )) nameArray.add( tmp );
-				//System.out.println( "Column Name -> " + data.getColumnName( i ) + " -> " + tmp );
+		//System.out.println("Count -> " + data.getCount());
+		//System.out.println("Column Count -> " + data.getColumnCount());
+		//System.out.println("");
+		if (data.getCount() > 0 ) {
+			//do {
+			for (int rows = 0; rows < data.getCount(); rows++) {
+			for ( int i = 0 ; i < data.getColumnNames().length ; i++ ) {
+				
+				String tmp = data.getString( i );
+				if ( data.getColumnName( i ).equals( "ID" ) ) {
+				} else {
+					if ( data.getColumnName( i ).equals( "NAME" ) ) nameArray.add( tmp );
+					//System.out.println( "Column Name -> " + data.getColumnName( i ) + " -> " + tmp );
+				}
 			}
+			data.moveToNext();
+			//if (data.isLast()) break;
+			//} while ( ! data.moveToNext() );
 		}
-		//data.moveToNext();
-		//if (data.isLast()) break;
-		} while (!data.moveToNext());
-		data.close();
+			data.close();
+		}
 				//data.moveToNext();
 			//}
 		//}
