@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -98,14 +99,23 @@ public class PetData extends AppCompatActivity {
                     petImage = "happy_cat";
                     int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
                     petPicture.setImageResource(resID);
+                    MediaPlayer mediaPlayer;
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.kitten_meow);
+                    mediaPlayer.start();
                 } else if (petType.equalsIgnoreCase("Dog")) {
                     petImage = "happy_dog";
                     int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
                     petPicture.setImageResource(resID);
+                    MediaPlayer mediaPlayer;
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.dog_barking);
+                    mediaPlayer.start();
                 } else {
                     petImage = "happy_hamster";
                     int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
                     petPicture.setImageResource(resID);
+                    MediaPlayer mediaPlayer;
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.hamster_squeak);
+                    mediaPlayer.start();
                 }
             }
         });
