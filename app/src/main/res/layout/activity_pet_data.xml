@@ -174,19 +174,27 @@
         tools:layout_editor_absoluteX="273dp"
         tools:layout_editor_absoluteY="370dp" />
 
+    <!--        tools:srcCompat="@tools:sample/backgrounds/scenic" -->
+
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="288dp"
-        android:layout_height="253dp"
+        android:layout_width="217dp"
+        android:layout_height="194dp"
         android:layout_above="@+id/btn_save"
-        android:layout_marginBottom="-11dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="29dp"
         android:contentDescription="@string/petimage"
         android:scaleType="fitCenter"
+        android:scaleX=".75"
+        android:scaleY=".75"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="468dp"/>
-<!--        tools:srcCompat="@tools:sample/backgrounds/scenic" -->
-
+        tools:layout_editor_absoluteY="468dp" />
 
     <Button
         android:id="@+id/btn_save"
