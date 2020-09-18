@@ -17,7 +17,6 @@ import com.mypet.Helpers.DBHelper;
 import java.util.ArrayList;
 
 public class PetListActivity extends AppCompatActivity {
-
 	Button addPet;
 	
 	ArrayList<String> nameArray = new ArrayList<String>();

@@ -8,7 +8,18 @@ import com.mypet.R;
 
 public class Hamster implements IPet {
     private static final String TAG ="Hamster" ;
-
+    PetState state;
+    
+    @Override
+    public void setState (PetState _state){
+        this.state = _state;
+    }
+    
+    @Override
+    public PetState getState (){
+        return this.state;
+    }
+    
     @Override
     public int play() {
         Log.d(TAG, "Meow");

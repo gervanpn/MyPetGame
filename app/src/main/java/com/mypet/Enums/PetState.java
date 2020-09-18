@@ -4,7 +4,7 @@ public enum PetState {
 	Happy {
 		@Override
 		public PetState nextState() {
-			return Hungry;
+			return Energetic;
 		}
 		
 		@Override
@@ -16,7 +16,7 @@ public enum PetState {
 	Hungry {
 		@Override
 		public PetState nextState() {
-			return Energetic;
+			return Happy;
 		}
 		
 		@Override
@@ -33,7 +33,7 @@ public enum PetState {
 		
 		@Override
 		public String toString() {
-			return "Sleepy";
+			return "Energetic";
 		}
 	};
 	
