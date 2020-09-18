@@ -23,7 +23,7 @@ public class Cat implements IPet {
     }
 
     @Override
-    public void message(Context _context) {
-        Message.message(_context,"Congrats you got your Cat");
+    public void message(Context context) {
+        Message.message(context,"Congrats you got your Cat");
     }
 }

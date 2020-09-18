@@ -13,7 +13,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public final static String COL_1 = "ID";
     public final static String COL_2 = "Name";
     public final static String COL_3 = "Type";
-    public final static String COL_4 = "Stats";
+    public final static String COL_4 = "State";
 
 
 
@@ -24,7 +24,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create table " +TABLE_NAME+ " (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,TYPE TEXT,STATS TEXT) ");
+        db.execSQL("create table " +TABLE_NAME+ " (ID INTEGER PRIMARY KEY AUTOINCREMENT,NAME TEXT,TYPE TEXT,STATE TEXT) ");
     }
 
     @Override
@@ -32,12 +32,12 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
     }
-    public boolean insertData(String name, String type, String stats){
+    public boolean insertData(String name, String type, String state){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2,name);
         contentValues.put(COL_3,type);
-        contentValues.put(COL_4,stats);
+        contentValues.put(COL_4,state);
         long result =  db.insert(TABLE_NAME, null,contentValues);
         if (result== -1){
             return false;
