@@ -14,7 +14,6 @@ import android.widget.ListView;
 import com.mypet.Enums.AnimalType;
 import com.mypet.Helpers.DBHelper;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PetListActivity extends AppCompatActivity {
@@ -80,10 +79,6 @@ public class PetListActivity extends AppCompatActivity {
 				Intent intent = new Intent(PetListActivity.this, PetData.class);
 				intent.putExtra( "Name", nameArray.get(position) );
 				intent.putExtra( "Type", animalArray.get(position) );
-				System.out.println("name set -> " + nameArray.get(position));
-				System.out.println("type set -> " + animalArray.get(position));
-				System.out.println("image set -> " + String.format("%d", imagesArray.get(position)));
-				//intent.putExtra( "Img", imagesArray.get(position) );
 				startActivity(intent);
 			}
 		});

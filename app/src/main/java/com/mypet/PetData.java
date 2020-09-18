@@ -27,10 +27,6 @@ public class PetData extends AppCompatActivity {
     EditText petNameData, petStateData, petTypeData;
     String petName, petType, petImage;
 
-    MediaPlayer dog_happy_sound = new MediaPlayer();;
-    MediaPlayer cat_happy_sound = new MediaPlayer();;
-    MediaPlayer hamster_happy_sound = new MediaPlayer();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +46,6 @@ public class PetData extends AppCompatActivity {
         petNameData.setText(petName);
         petType = getIntent().getExtras().getString("Type");
         petTypeData.setText(petType);
-        petImage = getIntent().getExtras().getString("Img");
-        System.out.println("image get -> " + petImage);
-        System.out.println("type get -> " + petType);
-        System.out.println("name get -> " + petName);
          //int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
         int resID = 0;
         switch (petType){
@@ -68,15 +60,6 @@ public class PetData extends AppCompatActivity {
                 break;
         }
         if (resID != 0) petPicture.setImageResource(resID);
-
-//        dog_happy_sound.create(getApplicationContext(), R.raw.dog_barking);
-//        cat_happy_sound.create(getApplicationContext(), R.raw.kitten_meow);
-//        try {
-//            cat_happy_sound.prepare();
-//        } catch ( IOException e ) {
-//            e.printStackTrace();
-//        }
-//        hamster_happy_sound.create(getApplicationContext(), R.raw.hamster_squeak);
 
         ibtnList.setOnClickListener(new View.OnClickListener() {
             @Override
