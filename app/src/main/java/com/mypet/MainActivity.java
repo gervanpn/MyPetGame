@@ -23,7 +23,6 @@ Button createPet;
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,SelectPet.class);
-                //Intent intent = new Intent(MainActivity.this,PetListActivity.class);
                 startActivity(intent);
             }
         });

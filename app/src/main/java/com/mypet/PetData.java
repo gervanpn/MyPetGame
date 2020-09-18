@@ -3,6 +3,7 @@ package com.mypet;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -82,6 +83,8 @@ public class PetData extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean isInserted = myDb.insertData(petNameData.getText().toString(), petTypeData.getText().toString(), petStateData.getText().toString());
+                Cursor data = myDb.getAllData();
+                System.out.println("Data -> " + data.toString());
                 if (isInserted == true) {
                     Message.message(PetData.this, "Your Pet is Saved");
                 } else

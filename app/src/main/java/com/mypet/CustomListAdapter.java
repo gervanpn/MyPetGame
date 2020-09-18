@@ -11,23 +11,26 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.mypet.Enums.AnimalType;
+
+import java.util.ArrayList;
+
 public class CustomListAdapter extends ArrayAdapter {
 	
 	//to reference the Activity
 	private final Activity context;
 	
 	//to store the animal images
-	private final Integer[] imageIDarray;
+	private ArrayList<Integer> imagesIDarray = new ArrayList<Integer>();
 	
 	//to store the list of countries
-	private final String[] nameArray;
+	private ArrayList<String> nameArray = new ArrayList<String>();
 	
-	
-	public CustomListAdapter(Activity context, String[] nameArrayParam, Integer[] imageIDArrayParam){
+	public CustomListAdapter(Activity context, ArrayList<String> nameArrayParam, ArrayList<Integer> imagesIDArrayParam){
 		
 		super(context,R.layout.listview_row , nameArrayParam);
 		this.context=context;
-		this.imageIDarray = imageIDArrayParam;
+		this.imagesIDarray = imagesIDArrayParam;
 		this.nameArray = nameArrayParam;
 	}
 	
@@ -40,10 +43,9 @@ public class CustomListAdapter extends ArrayAdapter {
 		ImageView imageView = (ImageView) rowView.findViewById(R.id.imageViewIcon);
 		
 		//this code sets the values of the objects to values from the arrays
-		nameTextField.setText(nameArray[position]);
-		imageView.setImageResource(imageIDarray[position]);
+		nameTextField.setText( nameArray.get( position ) );
+		if (!imagesIDarray.isEmpty()) imageView.setImageResource(imagesIDarray.get(position));
 		
 		return rowView;
-		
 	};
 }
