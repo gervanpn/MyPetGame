@@ -1,24 +1,20 @@
 package com.mypet;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
 import com.mypet.Helpers.DBHelper;
 
 public class PetData extends AppCompatActivity {
     DBHelper myDb;
-
     Button btnFeed, btnSleep, btnPlay, btnSave;
     ImageView petPicture;
     EditText petNameData, petStateData, petTypeData;
     String petName, petType, petImage;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,21 +35,24 @@ public class PetData extends AppCompatActivity {
         petNameData.setText(petName);
         petType = getIntent().getExtras().getString("Type");
         petTypeData.setText(petType);
-//      petImage = getIntent().getExtras().getString("Img");
-//      petPicture.setImageResource(R.drawable.petImage);
+        petImage = getIntent().getExtras().getString("Img");
+        int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
+        petPicture.setImageResource(resID);
         myDb = new DBHelper(this);
         AddData();
 
     }
-    public void AddData(){
+
+    public void AddData() {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean isInserted =   myDb.insertData(petNameData.getText().toString(),petTypeData.getText().toString(),petStateData.getText().toString());
+                boolean isInserted = myDb.insertData(petNameData.getText().toString(), petTypeData.getText().toString(), petStateData.getText().toString());
                 if (isInserted == true) {
                     Toast.makeText(PetData.this, "data inserted", Toast.LENGTH_SHORT).show();
 
-                }else Toast.makeText(PetData.this, "data did not get inserted", Toast.LENGTH_SHORT).show();
+                } else
+                    Toast.makeText(PetData.this, "data did not get inserted", Toast.LENGTH_SHORT).show();
             }
         });
     }
