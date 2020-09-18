@@ -32,14 +32,14 @@ public class PetData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pet_data);
 
-        petNameData = (EditText) findViewById(R.id.txtNameData);
-        petStateData = (EditText) findViewById(R.id.txtStateData);
-        petTypeData = (EditText) findViewById(R.id.txtTypeData);
-        btnFeed = (Button) findViewById(R.id.btn_feed);
-        btnSleep = (Button) findViewById(R.id.btn_sleep);
-        btnPlay = (Button) findViewById(R.id.btn_play);
-        btnSave = (Button) findViewById(R.id.btn_save);
-        petPicture = (ImageView) findViewById(R.id.imageView);
+        petNameData = findViewById(R.id.txtNameData);
+        petStateData = findViewById(R.id.txtStateData);
+        petTypeData = findViewById(R.id.txtTypeData);
+        btnFeed = findViewById(R.id.btn_feed);
+        btnSleep = findViewById(R.id.btn_sleep);
+        btnPlay = findViewById(R.id.btn_play);
+        btnSave = findViewById(R.id.btn_save);
+        petPicture = findViewById(R.id.imageView);
         ibtnList = findViewById(R.id.ibtn_listview);
 
         petName = getIntent().getExtras().getString("Name");
