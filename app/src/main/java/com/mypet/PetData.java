@@ -56,21 +56,57 @@ public class PetData extends AppCompatActivity {
         btnFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (petType.equalsIgnoreCase("Cat") ) {
+                    petImage = "hungry_cat";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else if (petType.equalsIgnoreCase("Dog")) {
+                    petImage = "hungry_dog";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else {
+                    petImage = "hungry_hamster";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                }
             }
         });
 
         btnSleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (petType.equalsIgnoreCase("Cat") ) {
+                    petImage = "sleepy_cat";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else if (petType.equalsIgnoreCase("Dog")) {
+                    petImage = "sleepy_dog";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else {
+                    petImage = "sleepy_hamster";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                }
             }
         });
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (petType.equalsIgnoreCase("Cat") ) {
+                    petImage = "happy_cat";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else if (petType.equalsIgnoreCase("Dog")) {
+                    petImage = "happy_dog";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else {
+                    petImage = "happy_hamster";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                }
             }
         });
 
