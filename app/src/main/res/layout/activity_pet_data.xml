@@ -182,6 +182,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="41dp"
         android:contentDescription="@string/petimage"
+        android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="468dp"
