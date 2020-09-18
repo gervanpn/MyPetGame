@@ -20,23 +20,24 @@ public class PetListActivity extends AppCompatActivity {
 	
 	//String[] nameArray;// = {"Cat","Dog","Hamster" };
 	ArrayList<String> nameArray = new ArrayList<String>();
+	ArrayList<Integer> imagesArray = new ArrayList<Integer>();
 	
-	//ArrayList<Integer> imageArray = new ArrayList<Integer>();
+	ArrayList<Integer> imageArray = new ArrayList<Integer>();
 	
 	//ArrayList< AnimalType> animalTypes = new ArrayList<AnimalType>();
 	
-	Integer[] imageArray = {R.drawable.cat_button,
-				R.drawable.dog_button,
-				R.drawable.hamster_btn,
-
-			R.drawable.cat_button,
-				R.drawable.dog_button,
-				R.drawable.hamster_btn,
-
-			R.drawable.cat_button,
-				R.drawable.dog_button,
-				R.drawable.hamster_btn,
-				};
+//	Integer[] imageArray = {R.drawable.cat_button,
+//				R.drawable.dog_button,
+//				R.drawable.hamster_btn,
+//
+//			R.drawable.cat_button,
+//				R.drawable.dog_button,
+//				R.drawable.hamster_btn,
+//
+//			R.drawable.cat_button,
+//				R.drawable.dog_button,
+//				R.drawable.hamster_btn,
+//				};
 
 	ListView listView;
 	@Override
@@ -44,15 +45,16 @@ public class PetListActivity extends AppCompatActivity {
 		super.onCreate( savedInstanceState );
 		setContentView( R.layout.activity_pet_list );
 		
-		CustomListAdapter whatever = new CustomListAdapter(this,nameArray , imageArray);//, animalTypes);
+		
 		listView = findViewById(R.id.petListView);
 		addPet = findViewById(R.id.btn_addPet);
-		listView.setAdapter(whatever);
+		
 		
 		DBHelper myDb = new DBHelper( this );
 		
 		Cursor data = myDb.getAllData();
-		//for (int row = 0; row < data.getCount(); row++) {
+		
+			//for (int row = 0; row < data.getCount(); row++) {
 			//for ( int index = 0 ; index < data.getColumnCount() ; index++ ) {
 		data.moveToFirst();
 		
@@ -68,6 +70,22 @@ public class PetListActivity extends AppCompatActivity {
 				if ( data.getColumnName( i ).equals( "ID" ) ) {
 				} else {
 					if ( data.getColumnName( i ).equals( "NAME" ) ) nameArray.add( tmp );
+					if ( data.getColumnName( i ).equals( "TYPE" ) ) {
+						switch (tmp){
+							case "Cat":
+								imagesArray.add(R.drawable.cat_button);
+								break;
+							case "Dog":
+								imagesArray.add(R.drawable.dog_button);
+								break;
+							case "Hamster":
+								imagesArray.add(R.drawable.hamster_btn);
+								break;
+						}
+						
+						//imagesArray.add (tmp);
+					}
+						//nameArray.add( tmp );
 					//System.out.println( "Column Name -> " + data.getColumnName( i ) + " -> " + tmp );
 				}
 			}
@@ -77,6 +95,8 @@ public class PetListActivity extends AppCompatActivity {
 		}
 			data.close();
 		}
+		CustomListAdapter whatever = new CustomListAdapter(this,nameArray , imagesArray);//, animalTypes);
+		listView.setAdapter(whatever);
 				//data.moveToNext();
 			//}
 		//}
