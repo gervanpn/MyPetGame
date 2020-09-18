@@ -51,17 +51,32 @@ public class PetData extends AppCompatActivity {
         petType = getIntent().getExtras().getString("Type");
         petTypeData.setText(petType);
         petImage = getIntent().getExtras().getString("Img");
-        int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
-        petPicture.setImageResource(resID);
+        System.out.println("image get -> " + petImage);
+        System.out.println("type get -> " + petType);
+        System.out.println("name get -> " + petName);
+         //int resID = getResources().getIdentifier(petImage, "drawable", this.getPackageName());
+        int resID = 0;
+        switch (petType){
+            case "Cat":
+                resID = R.drawable.cat_button;
+                break;
+            case "Dog":
+                resID = R.drawable.dog_button;
+                break;
+            case "Hamster":
+                resID = R.drawable.hamster_button;
+                break;
+        }
+        if (resID != 0) petPicture.setImageResource(resID);
         
-        dog_happy_sound.create(getApplicationContext(), R.raw.dog_barking);
-        cat_happy_sound.create(getApplicationContext(), R.raw.kitten_meow);
+//        dog_happy_sound.create(getApplicationContext(), R.raw.dog_barking);
+//        cat_happy_sound.create(getApplicationContext(), R.raw.kitten_meow);
 //        try {
 //            cat_happy_sound.prepare();
 //        } catch ( IOException e ) {
 //            e.printStackTrace();
 //        }
-        hamster_happy_sound.create(getApplicationContext(), R.raw.hamster_squeak);
+//        hamster_happy_sound.create(getApplicationContext(), R.raw.hamster_squeak);
 
         ibtnList.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +85,7 @@ public class PetData extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        
 
         btnFeed.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,7 +105,7 @@ public class PetData extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //if (petType.equalsIgnoreCase( AnimalType.Cat.toString() )) {
-                    cat_happy_sound.start();
+//                    cat_happy_sound.start();
                 //}
                 }
         });
