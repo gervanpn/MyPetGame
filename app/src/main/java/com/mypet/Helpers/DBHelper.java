@@ -2,6 +2,7 @@ package com.mypet.Helpers;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -41,5 +42,11 @@ public class DBHelper extends SQLiteOpenHelper {
         if (result== -1){
             return false;
         }else return true;
+    }
+
+    public Cursor getAllData(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME,null);
+        return res;
     }
 }
