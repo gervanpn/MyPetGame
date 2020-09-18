@@ -3,6 +3,7 @@
     <string name = "pet_title">Your Pet\'s Status</string>
     <string name = "pet_name">Pet Name</string>
     <string name = "pet_state">Your pet is:</string>
+    <string name = "pet_happy">Happy</string>
     <string name = "pet_type">You have a:</string>
     <string name = "title_activity_select_pet">SelectPet</string>
     <!-- Strings used for fragments for navigation -->

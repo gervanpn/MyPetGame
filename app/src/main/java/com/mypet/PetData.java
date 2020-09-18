@@ -26,7 +26,7 @@ public class PetData extends AppCompatActivity {
     ImageView petPicture;
     EditText petNameData, petStateData, petTypeData;
     String petName, petType, petImage;
-    
+
     MediaPlayer dog_happy_sound = new MediaPlayer();;
     MediaPlayer cat_happy_sound = new MediaPlayer();;
     MediaPlayer hamster_happy_sound = new MediaPlayer();
@@ -68,7 +68,7 @@ public class PetData extends AppCompatActivity {
                 break;
         }
         if (resID != 0) petPicture.setImageResource(resID);
-        
+
 //        dog_happy_sound.create(getApplicationContext(), R.raw.dog_barking);
 //        cat_happy_sound.create(getApplicationContext(), R.raw.kitten_meow);
 //        try {
@@ -85,29 +85,72 @@ public class PetData extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        
+
 
         btnFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (petType.equalsIgnoreCase("Cat") ) {
+                    petImage = "hungry_cat";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else if (petType.equalsIgnoreCase("Dog")) {
+                    petImage = "hungry_dog";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else {
+                    petImage = "hungry_hamster";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                }
             }
         });
 
         btnSleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                if (petType.equalsIgnoreCase("Cat") ) {
+                    petImage = "sleepy_cat";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else if (petType.equalsIgnoreCase("Dog")) {
+                    petImage = "sleepy_dog";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                } else {
+                    petImage = "sleepy_hamster";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                }
             }
         });
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //if (petType.equalsIgnoreCase( AnimalType.Cat.toString() )) {
-//                    cat_happy_sound.start();
-                //}
+                if (petType.equalsIgnoreCase("Cat") ) {
+                    petImage = "happy_cat";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                    MediaPlayer mediaPlayer;
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.kitten_meow);
+                    mediaPlayer.start();
+                } else if (petType.equalsIgnoreCase("Dog")) {
+                    petImage = "happy_dog";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                    MediaPlayer mediaPlayer;
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.dog_barking);
+                    mediaPlayer.start();
+                } else {
+                    petImage = "happy_hamster";
+                    int resID = getResources().getIdentifier(petImage, "drawable", getPackageName());
+                    petPicture.setImageResource(resID);
+                    MediaPlayer mediaPlayer;
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.hamster_squeak);
+                    mediaPlayer.start();
                 }
+            }
         });
 
         myDb = new DBHelper(this);
