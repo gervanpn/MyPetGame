@@ -10,8 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
+import com.mypet.Enums.PetState;
 import com.mypet.Helpers.DBHelper;
+import com.mypet.Helpers.Message;
 
 public class PetData extends AppCompatActivity {
     DBHelper myDb;
@@ -52,6 +53,27 @@ public class PetData extends AppCompatActivity {
             }
         });
 
+        btnFeed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        btnSleep.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        btnPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         myDb = new DBHelper(this);
         AddData();
     }
@@ -64,10 +86,9 @@ public class PetData extends AppCompatActivity {
                 Cursor data = myDb.getAllData();
                 System.out.println("Data -> " + data.toString());
                 if (isInserted == true) {
-                    Toast.makeText(PetData.this, "data inserted", Toast.LENGTH_SHORT).show();
-
+                    Message.message(PetData.this, "Your Pet is Saved");
                 } else
-                    Toast.makeText(PetData.this, "data did not get inserted", Toast.LENGTH_SHORT).show();
+                    Message.message(PetData.this, "Pet NOT Saved");
             }
         });
 

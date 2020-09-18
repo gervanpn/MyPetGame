@@ -1,19 +1,6 @@
 package com.mypet.Enums;
 
 public enum PetState {
-	Unhappy {
-		@Override
-		public PetState nextState() {
-			return Happy;
-		}
-		
-		@Override
-		public String toString() {
-			return "Unhappy";
-		}
-		
-		
-	},
 	Happy {
 		@Override
 		public PetState nextState() {
@@ -24,32 +11,30 @@ public enum PetState {
 		public String toString() {
 			return "Happy";
 		}
-		
-		
 	},
+
 	Hungry {
 		@Override
 		public PetState nextState() {
-			return Sleepy;
+			return Energetic;
 		}
 		
 		@Override
 		public String toString() {
 			return "Hungry";
 		}
-		
 	},
-	Sleepy {
+
+	Energetic {
 		@Override
 		public PetState nextState() {
-			return this;
+			return Happy;
 		}
 		
 		@Override
 		public String toString() {
 			return "Sleepy";
 		}
-		
 	};
 	
 	public abstract PetState nextState();
