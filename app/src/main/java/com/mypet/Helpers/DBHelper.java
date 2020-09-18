@@ -1,4 +1,4 @@
-package com.mypet;
+package com.mypet.Helpers;
 
 import android.content.ContentValues;
 import android.content.Context;

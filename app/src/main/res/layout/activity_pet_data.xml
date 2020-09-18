@@ -87,7 +87,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="22dp"
         android:layout_marginEnd="50dp"
-        android:hint="@string/pet_state"
+        android:hint="Happy"
         android:importantForAutofill="no"
         android:inputType="text"
         android:text="@string/pet_state"

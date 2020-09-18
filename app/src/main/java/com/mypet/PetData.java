@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.mypet.Helpers.DBHelper;
+
 public class PetData extends AppCompatActivity {
     DBHelper myDb;
 
@@ -29,9 +31,7 @@ public class PetData extends AppCompatActivity {
         btnFeed = (Button) findViewById(R.id.btn_feed);
         btnSleep = (Button) findViewById(R.id.btn_sleep);
         btnPlay = (Button) findViewById(R.id.btn_play);
-
         petPicture = (ImageView) findViewById(R.id.imageView);
-
         btnSave = (Button) findViewById(R.id.btn_save);
         petPicture = (ImageView) findViewById(R.id.imageView);
 
