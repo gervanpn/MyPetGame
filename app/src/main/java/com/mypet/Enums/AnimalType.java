@@ -27,7 +27,7 @@ public enum AnimalType {
 			return "Hamster";
 		}
 		public String returnImage(){
-			return "hamster_but";
+			return "hamster_button";
 		}
 	};
 	

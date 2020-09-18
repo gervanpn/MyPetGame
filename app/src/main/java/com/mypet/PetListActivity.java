@@ -52,7 +52,7 @@ public class PetListActivity extends AppCompatActivity {
 									imagesArray.add(R.drawable.dog_button);
 									break;
 								case "Hamster":
-									imagesArray.add(R.drawable.hamster_btn);
+									imagesArray.add(R.drawable.hamster_button );
 									break;
 							}
 						}
