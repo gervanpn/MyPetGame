@@ -22,7 +22,7 @@ public class Hamster implements IPet {
     
     @Override
     public int play() {
-        Log.d(TAG, "Meow");
+        Log.d(TAG, "Squeak");
         return R.raw.hamster_squeak;
     }
 

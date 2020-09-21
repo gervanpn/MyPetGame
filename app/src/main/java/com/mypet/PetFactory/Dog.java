@@ -31,6 +31,7 @@ public class Dog implements IPet {
         Log.d(TAG, "Dog eats bones!");
         return PetState.Happy;
     }
+
     @Override
         public void message(Context context) {
             Message.message(context,"Congrats you got your Dog");

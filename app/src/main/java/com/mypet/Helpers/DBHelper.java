@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 
 public class DBHelper extends SQLiteOpenHelper {
@@ -18,7 +17,6 @@ public class DBHelper extends SQLiteOpenHelper {
     public final static String COL_4 = "State";
 
     public ArrayList<String> petNames = new ArrayList<String>();
-
 
     public DBHelper( Context context) {
         super(context, DATABASE_NAME, null, VERSION);
@@ -35,6 +33,7 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
         onCreate(db);
     }
+
     public boolean insertData(String name, String type, String state){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
