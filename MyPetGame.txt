@@ -1,4 +1,3 @@
-# MyPetGame
 Github: https://github.com/gervanpn/MyPetGame
 Jira: https://williscollege.atlassian.net/jira/software/projects/MPG/boards/14
 
@@ -45,15 +44,3 @@ Playing the game:
 				1) Happy Picture
 			iii. Sleep
 				1) Sleepy Picture
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About

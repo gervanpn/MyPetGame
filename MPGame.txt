@@ -1,4 +1,3 @@
-# MyPetGame
 Github: https://github.com/gervanpn/MyPetGame
 Jira: https://williscollege.atlassian.net/jira/software/projects/MPG/boards/14
 
